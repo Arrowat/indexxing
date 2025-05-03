@@ -24,7 +24,7 @@
         "location": "" /*Web Page URL*/,
         "lastModified": "" /*Last Modified datetime*/,
         "socialNetworks": [ "", "", "" ] /*Any Social Network URL or Website*/,
-        "siteMaps": [ "sitema.xml", "sitema.xml" ] /*the sitemaps URLs as sitema.xml*/,
+        "siteMaps": [ "sitemap.xml", "sitemap.xml" ] /*the sitemaps URLs as sitemap.xml*/,
         "keyWords": [] /*Web Page Keywords*/,
         "notes": "" /*Any note or text*/,
         "robots": "Index,Follow" /* Defines how search engines should handle this page: 'Index,Follow' allows indexing and link-following. 'NoIndex,NoFollow' prevents indexing and following links. */,
