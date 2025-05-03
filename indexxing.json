@@ -1,0 +1,39 @@
+{
+  "indexxing": {
+    "schemaVersion": "1.0" /*indexxing schema version used for file version format decision when parsing*/,
+    "schema": "https://www.indexxing.org/schemas/json/v/1.0" /*schema deatils of indexxing version*/,
+    "index": [
+      {
+        "title": "" /*Web Page Title*/,
+        "description": "" /*Web page Description*/,
+        "media": {
+          "mediaType": "" /*Image, Audio, Video*/,
+          "mediaLocation": "" /*Media URL*/
+        },
+        "mediaGallery": [
+          {
+            "mediaType": "" /*Image, Audio, Video*/,
+            "mediaLocation": "" /*Media URL*/
+          },
+          {
+            "mediaType": "" /*Image, Audio, Video*/,
+            "mediaLocation": "" /*Media URL*/
+          }
+        ],
+        "homeLocation": "" /*Main Web Page URL or desired URL*/,
+        "location": "" /*Web Page URL*/,
+        "lastModified": "" /*Last Modified datetime*/,
+        "socialNetworks": [ "", "", "" ] /*Any Social Network URL or Website*/,
+        "siteMaps": [ "sitema.xml", "sitema.xml" ] /*the sitemaps URLs as sitema.xml*/,
+        "keyWords": [] /*Web Page Keywords*/,
+        "notes": "" /*Any note or text*/,
+        "robots": "Index,Follow" /* Defines how search engines should handle this page: 'Index,Follow' allows indexing and link-following. 'NoIndex,NoFollow' prevents indexing and following links. */,
+        "languages": [
+          "en-US",
+          "es-ES"
+        ] /*Web page Languages*/
+      }
+    ]
+  }
+}
+	
