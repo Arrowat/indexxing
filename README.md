@@ -76,7 +76,77 @@ All scripting code is stored as **single‑line JSON‑safe strings**.
  }
 ]
 ```
+## Generate an indexxing.json Script Using AI
+You can ask any modern AI assistant to generate an Arrowat Indexxing Protocol script for you.
+Use the following prompt template:
+```text
+Act as a software engineer.
+Write an Arrowat Indexxing Protocol script block wrapped inside a "script" array.
+Use the JSON structure with the fields: "language", "target", "set", and "@".
+Inside "set.text", use the @{...} symbol as an evaluation pointer.
+Inside the bottom "@" field, write the executable runtime logic for the calculation.
+The script must compute the age of a person born on April 25, 1985, as of today’s date,
+expressed in years, months, and days. Use C# as the language.
+```
+## Supported Script Languages
+Set the "language" field to any supported execution mode:
 
+- JavaScript
+- TypeScript
+- Python
+- C#
+- Java
+- PHP
+- SQL
+- Swift
+- PowerShell
+- C++
+- Visual Basic
+- VB.NET
+- Ruby
+- Perl
+- NaturalLanguage (AI reasoning mode)
+
+AI will automatically generate the full script in the correct structure.
+
+### Notes
+- **NaturalLanguage** allows the AI to execute logic using pure reasoning instead of code.
+- AI may support additional languages depending on the model.
+- The `"@"` block can contain code or natural-language instructions.
+
+### Multilingual Execution
+
+The `"language"` field in indexxing.json is not limited to programming languages.  
+It can also reference **human languages**, allowing the AI to execute reasoning or produce output in:
+
+- English
+- Spanish
+- French
+- German
+- Portuguese
+- Italian
+- Japanese
+- Chinese
+- Arabic
+- and more
+
+When a human language is used, the `"@"` block is interpreted as natural‑language reasoning in that language, and all output is generated accordingly.
+## Example
+``` json
+{
+  "script": [
+    {
+      "language": "Spanish",
+      "target": "saludo",
+      "set": {
+        "text": "El resultado es: @{mensaje}"
+      },
+      "@": "Genera un mensaje amistoso en español y asígnalo a 'mensaje'."
+    }
+  ]
+}
+
+```
 ---
 
 
