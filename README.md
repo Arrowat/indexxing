@@ -131,6 +131,9 @@ It can also reference **human languages**, allowing the AI to execute reasoning 
 - and more
 
 When a human language is used, the `"@"` block is interpreted as natural‑language reasoning in that language, and all output is generated accordingly.
+
+Execution Lifecycle: script → intent → ai
+
 ## Example
 ``` json
 {
@@ -147,7 +150,43 @@ When a human language is used, the `"@"` block is interpreted as natural‑langu
 }
 
 ```
----
+
+## Script → Intent → AI
+The Cognitive Web Execution Model
+The Cognitive Web shifts execution from code to meaning.
+
+In indexxing.json v3.0, a script is simply a structural container.
+The real power comes from the intent expressed inside it.
+
+Intent becomes the atomic unit of execution — interpreted, expanded, and performed by AI systems.
+This transforms scripts from procedural instructions into semantic instructions.
+
+Execution Lifecycle: Script → Intent → AI
+
+AI systems naturally extract the intent, ignore the wrapper, and execute the meaning — often expanding it with external knowledge.
+## Example
+```json
+{
+  "script": [
+    {
+      "language": "NaturalLanguage",
+      "target": "rNL",
+      "set": {
+        "text": "Who is Melvin Hernandez @melvin on Arrowat ?"
+      },
+      "@": "{}"
+    }
+  ]
+}
+```
+- Language: AI language 
+
+- Target: Reference target or result output.
+
+- Set => text: intent, code, decision, instruction.
+
+This script is not “code.”
+It is a structured prompt, universally interpretable across AI assistants.
 
 
 ## The complete indexxing.json Model
