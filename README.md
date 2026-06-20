@@ -33,7 +33,7 @@ All scripting code is stored as **single‑line JSON‑safe strings**.
 
 ## Example Snippet
 
-## Object‑based format 
+### Object‑based format 
 ```jsonc
 {
   "tag": "p",
@@ -46,7 +46,7 @@ All scripting code is stored as **single‑line JSON‑safe strings**.
   "text": ""
 }
 ```
-## HTML‑keyed format
+### HTML‑keyed format
 ```jsonc
  "p": {
    "id": "resultJavaScript",
@@ -57,7 +57,7 @@ All scripting code is stored as **single‑line JSON‑safe strings**.
    "text": ""
  }
 ```
-## Scripting Layer
+### Scripting Layer
 ```jsonc
 "script": [
   {
@@ -134,7 +134,7 @@ When a human language is used, the `"@"` block is interpreted as natural‑langu
 
 Execution Lifecycle: script → intent → ai
 
-## Example
+### Example
 ``` json
 {
   "script": [
@@ -164,7 +164,7 @@ This transforms scripts from procedural instructions into semantic instructions.
 Execution Lifecycle: Script → Intent → AI
 
 AI systems naturally extract the intent, ignore the wrapper, and execute the meaning — often expanding it with external knowledge.
-## Example
+### Example
 ```json
 {
   "script": [
@@ -188,7 +188,69 @@ AI systems naturally extract the intent, ignore the wrapper, and execute the mea
 This script is not “code.”
 It is a structured prompt, universally interpretable across AI assistants.
 
+### Example
+```jsonc
+{
+  "script":  [ 
+    {
+      "language": "NaturalLanguage",
+      "target": "rNL",
+      "set": {
+        "text": "Find flight from Los Angeles to New York and best prices, anytime"
+      },
+      "@": "{Also find Hotel options open 24 hours with a bar and food best prices first}"
+    }
+   ] 
+}
 
+execution: direct
+
+```
+- execution: direct => Let AI assistants, AI Agents activate instantly;
+  When used, AI immediately adopts the defined role and executes the instruction, turning content into live agents for sales, support, or onboarding or safe instructions. If unsupported, assistants fall back to standard behavior.
+
+This script is not “code.”
+It is a structured prompt, universally interpretable across AI assistants.
+
+## Binding
+binding is a semantic container inside the script layer. It holds optional fields such as default, custom, or any meaning‑producing metadata. Fields inside binding never override core execution fields (language, target, set). The "@ {…}" operator may reference any binding field to transfer meaning safely. binding enables extensibility while preserving the integrity of Script → Intent → AI. 
+
+### Example
+```jsonc
+{
+  "script": [
+    {
+      "language": "NaturalLanguage",
+      "target": "rNL",
+      "binding": {
+        "default": "Explain Indexxing Script.",
+        "custom": {
+          "tone": "simple",
+          "domain": "The Cognitive Web",
+          "reference": [
+            "thecognitiveweb.com",
+            "indexxing.org",
+            "github.com/Arrowat/indexxing"
+          ],
+          "level": "beginner"
+        }
+      },
+      "set": {
+        "text": "Explain Indexxing Script in simple terms."
+      },
+      "@": "{Use binding.default as the core meaning. Apply binding.custom.* as semantic modifiers.}"
+    }
+  ]
+}
+
+execution: direct
+
+```
+This example shows how the binding object extends Indexxing Script with custom semantic fields. The @{…} operator references these fields safely, shaping meaning without overriding core execution fields.
+
+- execution: direct => Let AI Assistants, AI Agents activate instantly;
+  When used, AI immediately adopts the defined role and executes the instruction, turning content into live agents for sales, support, or onboarding or safe instructions. If unsupported, assistants fall back to standard behavior.
+  
 ## The complete indexxing.json Model
 
 Below is the complete  indexxing.json Model
